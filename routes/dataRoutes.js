@@ -3,7 +3,7 @@ const router = express.Router();
 const { fetchData } = require("../controllers/dataController");
 const auth = require("../middleware/auth");
 
-// Define the route for fetching data
+// Defined the route way for fetching data thrgh Api
 router.get("/", auth, fetchData);
 
 module.exports = router;

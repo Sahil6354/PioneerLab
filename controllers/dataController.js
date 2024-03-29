@@ -5,18 +5,18 @@ exports.fetchData = async (req, res) => {
     const { category, limit } = req.query;
     let apiUrl = `https://api.publicapis.org/entries`;
 
-    // Fetch data from the public API
+    // data form public api
     const response = await axios.get(apiUrl);
     let data = response.data.entries;
 
-    // Filter by category if specified
+    // Filtering by category
     if (category) {
       data = data.filter(
         (entry) => entry.Category.toLowerCase() === category.toLowerCase()
       );
     }
 
-    // Apply result limit if specified
+    // Applying result
     if (limit) {
       data = data.slice(0, parseInt(limit));
     }
